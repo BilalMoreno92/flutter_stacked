@@ -44,6 +44,7 @@ dependencies:
   flutter_hooks: ^0.18.5+1
   image_picker: ^0.8.6
   cross_file: ^0.3.3+2
+  http: ^0.13.5
 
 
 dev_dependencies:

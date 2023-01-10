@@ -13,13 +13,14 @@ import 'package:flutter_arc/ui/views/image_picker/image_picker_view.dart'
     as _i8;
 import 'package:flutter_arc/ui/views/partial_builds/partial_builds_view.dart'
     as _i4;
+import 'package:flutter_arc/ui/views/posts_example/posts_view.dart' as _i9;
 import 'package:flutter_arc/ui/views/reactive_example/reactive_example_view.dart'
     as _i5;
 import 'package:flutter_arc/ui/views/startup/startup_view.dart' as _i2;
 import 'package:flutter_arc/ui/views/stream_example/stream_example_view.dart'
     as _i7;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i9;
+import 'package:stacked_services/stacked_services.dart' as _i10;
 
 class Routes {
   static const startupView = '/';
@@ -36,6 +37,8 @@ class Routes {
 
   static const imagePickerView = '/image-picker-view';
 
+  static const postsView = '/posts-view';
+
   static const all = <String>{
     startupView,
     homeView,
@@ -44,6 +47,7 @@ class Routes {
     futureExampleView,
     streamExampleView,
     imagePickerView,
+    postsView,
   };
 }
 
@@ -76,6 +80,10 @@ class StackedRouter extends _i1.RouterBase {
     _i1.RouteDef(
       Routes.imagePickerView,
       page: _i8.ImagePickerView,
+    ),
+    _i1.RouteDef(
+      Routes.postsView,
+      page: _i9.PostsView,
     ),
   ];
 
@@ -122,6 +130,12 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
+    _i9.PostsView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => const _i9.PostsView(),
+        settings: data,
+      );
+    },
   };
 
   @override
@@ -130,7 +144,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i9.NavigationService {
+extension NavigatorStateExtension on _i10.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -223,6 +237,20 @@ extension NavigatorStateExtension on _i9.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.imagePickerView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToPostsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.postsView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
