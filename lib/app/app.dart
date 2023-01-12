@@ -10,6 +10,7 @@ import 'package:flutter_arc/ui/views/home/home_view.dart';
 import 'package:flutter_arc/ui/views/image_picker/image_picker_view.dart';
 import 'package:flutter_arc/ui/views/partial_builds/partial_builds_view.dart';
 import 'package:flutter_arc/ui/views/posts_example/posts_view.dart';
+import 'package:flutter_arc/ui/views/posts_example/posts_viewmodel.dart';
 import 'package:flutter_arc/ui/views/reactive_example/reactive_example_view.dart';
 import 'package:flutter_arc/ui/views/startup/startup_view.dart';
 import 'package:flutter_arc/ui/views/stream_example/stream_example_view.dart';
@@ -27,13 +28,15 @@ import 'package:stacked_services/stacked_services.dart';
   MaterialRoute(page: PostsView),
   MaterialRoute(page: AddressSelectionView),
 ], dependencies: [
-  Singleton(classType: NavigationService),
-  Singleton(classType: DialogService),
-  Singleton(classType: SharedPreferencesService),
+
   LazySingleton(classType: CounterService),
   LazySingleton(classType: MediaService),
   LazySingleton(classType: Api),
   LazySingleton(classType: PostsService),
   LazySingleton(classType: AppDatabase),
+  Singleton(classType: NavigationService),
+  Singleton(classType: DialogService),
+  Singleton(classType: SharedPreferencesService),
+  Singleton(classType: PostsViewModel),
 ])
 class App {}

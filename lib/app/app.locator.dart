@@ -16,6 +16,7 @@ import '../services/media_service.dart';
 import '../services/posts_service.dart';
 import '../services/shared_preferences_service.dart';
 import '../system/app_database.dart';
+import '../ui/views/posts_example/posts_viewmodel.dart';
 
 final locator = StackedLocator.instance;
 
@@ -34,4 +35,5 @@ Future<void> setupLocator(
   locator.registerLazySingleton(() => Api());
   locator.registerLazySingleton(() => PostsService());
   locator.registerLazySingleton(() => AppDatabase());
+  locator.registerSingleton(PostsViewModel());
 }
