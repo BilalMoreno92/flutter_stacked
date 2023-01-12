@@ -2,6 +2,9 @@ import 'package:flutter_arc/services/api.dart';
 import 'package:flutter_arc/services/counter_service.dart';
 import 'package:flutter_arc/services/media_service.dart';
 import 'package:flutter_arc/services/posts_service.dart';
+import 'package:flutter_arc/services/shared_preferences_service.dart';
+import 'package:flutter_arc/system/app_database.dart';
+import 'package:flutter_arc/ui/views/address_selection/address_selection_view.dart';
 import 'package:flutter_arc/ui/views/future_example/future_example_view.dart';
 import 'package:flutter_arc/ui/views/home/home_view.dart';
 import 'package:flutter_arc/ui/views/image_picker/image_picker_view.dart';
@@ -22,12 +25,15 @@ import 'package:stacked_services/stacked_services.dart';
   MaterialRoute(page: StreamExampleView),
   MaterialRoute(page: ImagePickerView),
   MaterialRoute(page: PostsView),
+  MaterialRoute(page: AddressSelectionView),
 ], dependencies: [
   Singleton(classType: NavigationService),
   Singleton(classType: DialogService),
+  Singleton(classType: SharedPreferencesService),
   LazySingleton(classType: CounterService),
   LazySingleton(classType: MediaService),
   LazySingleton(classType: Api),
   LazySingleton(classType: PostsService),
+  LazySingleton(classType: AppDatabase),
 ])
 class App {}
