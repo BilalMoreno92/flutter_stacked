@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arc/ui/validation_example/validation_example_viewmodel.dart';
+import 'package:flutter_arc/ui/views/validation_example/validation_example_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
 class ValidationExampleView extends StatelessWidget {
