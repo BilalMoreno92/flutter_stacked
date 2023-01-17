@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_arc/ui/views/startup/startup_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
-class StartupView extends ViewModelBuilderWidget<StartupViewModel> {
+class StartupView extends StackedView<StartupViewModel> {
   const StartupView({Key? key}) : super(key: key);
 
   @override

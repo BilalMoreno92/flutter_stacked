@@ -13,5 +13,5 @@ class DoubleIncreaseCounterViewModel extends ReactiveViewModel {
   }
 
   @override
-  List<ReactiveServiceMixin> get reactiveServices => [_counterService];
+  List<ListenableServiceMixin> get listenableServices => [_counterService];
 }

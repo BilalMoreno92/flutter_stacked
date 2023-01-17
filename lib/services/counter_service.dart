@@ -1,6 +1,6 @@
 import 'package:stacked/stacked.dart';
 
-class CounterService with ReactiveServiceMixin{
+class CounterService with ListenableServiceMixin{
   int _counter = 0;
 
   int get counter => _counter;

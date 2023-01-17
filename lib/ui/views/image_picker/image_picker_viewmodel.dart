@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_arc/services/media_service.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:stacked/stacked.dart';
 
 class ImagePickerViewModel extends BaseViewModel {
@@ -12,6 +11,7 @@ class ImagePickerViewModel extends BaseViewModel {
   Uint8List? get selectedImage => _selectedImage;
 
   Future selectImage({required bool fromGallery}) async {
-    _selectedImage = await _mediaService.getImage(fromGallery: fromGallery);
+    _selectedImage = await runBusyFuture<Uint8List?>(
+        _mediaService.getImage(fromGallery: fromGallery));
   }
 }

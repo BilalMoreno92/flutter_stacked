@@ -38,9 +38,10 @@ dependencies:
   cupertino_icons: ^1.0.5
 
   # state management and navigation
-  stacked: ^3.0.1
+  stacked: ^3.1.0+1
   stacked_services: ^0.9.9
-  stacked_hooks: ^0.2.2
+  stacked_hooks: ^0.2.3
+  stacked_themes: ^0.3.9
   flutter_hooks: ^0.18.5+1
   image_picker: ^0.8.6
   cross_file: ^0.3.3+2
@@ -53,7 +54,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  get: ^4.6.5
+# get: ^4.6.5
 
   build_runner:
   stacked_generator:

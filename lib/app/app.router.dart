@@ -8,11 +8,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_arc/ui/views/address_selection/address_selection_view.dart'
     as _i10;
+import 'package:flutter_arc/ui/views/bottom_sheet_example/bottom_sheet_example_view.dart'
+    as _i14;
+import 'package:flutter_arc/ui/views/dark_light/dark_light_view.dart' as _i13;
+import 'package:flutter_arc/ui/views/dialog_example/dialog_example_view.dart'
+    as _i11;
 import 'package:flutter_arc/ui/views/future_example/future_example_view.dart'
     as _i6;
 import 'package:flutter_arc/ui/views/home/home_view.dart' as _i3;
 import 'package:flutter_arc/ui/views/image_picker/image_picker_view.dart'
     as _i8;
+import 'package:flutter_arc/ui/views/multiple_themes/multiple_themes_view.dart'
+    as _i12;
 import 'package:flutter_arc/ui/views/partial_builds/partial_builds_view.dart'
     as _i4;
 import 'package:flutter_arc/ui/views/posts_example/posts_view.dart' as _i9;
@@ -22,7 +29,7 @@ import 'package:flutter_arc/ui/views/startup/startup_view.dart' as _i2;
 import 'package:flutter_arc/ui/views/stream_example/stream_example_view.dart'
     as _i7;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i11;
+import 'package:stacked_services/stacked_services.dart' as _i15;
 
 class Routes {
   static const startupView = '/';
@@ -43,6 +50,14 @@ class Routes {
 
   static const addressSelectionView = '/address-selection-view';
 
+  static const dialogExampleView = '/dialog-example-view';
+
+  static const multipleThemesView = '/multiple-themes-view';
+
+  static const darkLightView = '/dark-light-view';
+
+  static const bottomSheetExampleView = '/bottom-sheet-example-view';
+
   static const all = <String>{
     startupView,
     homeView,
@@ -53,6 +68,10 @@ class Routes {
     imagePickerView,
     postsView,
     addressSelectionView,
+    dialogExampleView,
+    multipleThemesView,
+    darkLightView,
+    bottomSheetExampleView,
   };
 }
 
@@ -93,6 +112,22 @@ class StackedRouter extends _i1.RouterBase {
     _i1.RouteDef(
       Routes.addressSelectionView,
       page: _i10.AddressSelectionView,
+    ),
+    _i1.RouteDef(
+      Routes.dialogExampleView,
+      page: _i11.DialogExampleView,
+    ),
+    _i1.RouteDef(
+      Routes.multipleThemesView,
+      page: _i12.MultipleThemesView,
+    ),
+    _i1.RouteDef(
+      Routes.darkLightView,
+      page: _i13.DarkLightView,
+    ),
+    _i1.RouteDef(
+      Routes.bottomSheetExampleView,
+      page: _i14.BottomSheetExampleView,
     ),
   ];
 
@@ -151,6 +186,30 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
+    _i11.DialogExampleView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => const _i11.DialogExampleView(),
+        settings: data,
+      );
+    },
+    _i12.MultipleThemesView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => const _i12.MultipleThemesView(),
+        settings: data,
+      );
+    },
+    _i13.DarkLightView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => const _i13.DarkLightView(),
+        settings: data,
+      );
+    },
+    _i14.BottomSheetExampleView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => const _i14.BottomSheetExampleView(),
+        settings: data,
+      );
+    },
   };
 
   @override
@@ -159,7 +218,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i11.NavigationService {
+extension NavigatorStateExtension on _i15.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -280,6 +339,62 @@ extension NavigatorStateExtension on _i11.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.addressSelectionView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToDialogExampleView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.dialogExampleView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToMultipleThemesView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.multipleThemesView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToDarkLightView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.darkLightView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToBottomSheetExampleView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.bottomSheetExampleView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

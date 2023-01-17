@@ -11,8 +11,6 @@ class SingleIncreaseCounterViewModel extends ReactiveViewModel {
     _counterService.incrementCounter();
     notifyListeners();
   }
-
-  @override
-  // TODO: implement reactiveServices
-  List<ReactiveServiceMixin> get reactiveServices => [_counterService];
+@override
+  List<ListenableServiceMixin> get listenableServices => [_counterService];
 }
